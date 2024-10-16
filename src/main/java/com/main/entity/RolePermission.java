@@ -10,17 +10,17 @@ import lombok.Data;
 @Data
 @Entity
 @Table
-public class UserEntity {
+public class RolePermission {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String firstName;
-	private String lastName;
-	private String phoneNo;
-	private  int roleId;
-	private int status;
-	private String userEmail;
-	private String userRole;
-	private String password;
+	private boolean delete;
+	private boolean isDefaultLandingPage;
+	private int moduleId;
+	private boolean read;
+	private int subModuleIds;
+	private boolean update;
+	private boolean write;
+	
 
 }
