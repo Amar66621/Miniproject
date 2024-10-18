@@ -34,6 +34,10 @@ public class UserEntity {
 
 	
 	
+
+	
+	
+
 	 @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	    @JoinTable(
 	        name = "user_roles",
@@ -41,5 +45,6 @@ public class UserEntity {
 	        inverseJoinColumns = @JoinColumn(name = "role_id")
 	    )
 	    private Set<UserRole> roles = new HashSet<>();
+
 
 }

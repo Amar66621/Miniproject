@@ -25,7 +25,7 @@ public class RolePermission {
 	private boolean update;
 	private boolean write;
 	
-	// welcome to my profile
+
 
 	 @ManyToOne(fetch = FetchType.LAZY)
 	    @JoinColumn(name = "role_id", nullable = false)
