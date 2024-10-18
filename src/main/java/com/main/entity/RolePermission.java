@@ -22,6 +22,6 @@ public class RolePermission {
 	private boolean update;
 	private boolean write;
 	
-	// welcome to my profile
+
 
 }
