@@ -7,19 +7,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.main.dto.UserRequest;
-import com.main.service.UserService;
+import com.main.dto.UserRoleRequest;
+import com.main.service.UserRoleService;
 
 @RestController
-@RequestMapping("/user")
-public class UserController {
-	
+@RequestMapping("/role")
+public class UserRoleController {
 	
 	@Autowired
-	private UserService service;
+	private UserRoleService service;
 	
-	@PostMapping("/register")
-	public ResponseEntity<String> create(@RequestBody UserRequest request){
-		return ResponseEntity.ok(service.createUser(request));
+	
+	@PostMapping("/save")
+	public ResponseEntity<String> Save(@RequestBody UserRoleRequest request){
+		return service.createUserRole(request);
 	}
+
 }
