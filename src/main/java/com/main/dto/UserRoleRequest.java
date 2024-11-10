@@ -1,6 +1,6 @@
 package com.main.dto;
 
-import java.util.Set;
+
 
 import lombok.Data;
 
@@ -12,5 +12,5 @@ public class UserRoleRequest {
     private boolean canAccessMobileRequest;
     private boolean canAccessWebRequest;
     private int status;
-    private Set<Long> permissionIds;
+
 }

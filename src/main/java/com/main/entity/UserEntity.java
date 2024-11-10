@@ -1,7 +1,9 @@
 package com.main.entity;
 
-import java.util.HashSet;
-import java.util.Set;
+
+
+
+import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -10,9 +12,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -32,19 +32,12 @@ public class UserEntity {
 	private String userRole;
 	private String password;
 
-	
-	
+	  @OneToMany(targetEntity = UserRole.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	   @JoinColumn(name = "role_id", referencedColumnName = "id")
+	private List<UserRole> roles;
 
 	
 	
-
-	 @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	    @JoinTable(
-	        name = "user_roles",
-	        joinColumns = @JoinColumn(name = "user_id"),
-	        inverseJoinColumns = @JoinColumn(name = "role_id")
-	    )
-	    private Set<UserRole> roles = new HashSet<>();
 
 
 }
