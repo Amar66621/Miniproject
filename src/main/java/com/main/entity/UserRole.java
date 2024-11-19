@@ -1,7 +1,4 @@
 package com.main.entity;
-
-
-
 import jakarta.persistence.Entity;
 
 import jakarta.persistence.GeneratedValue;
@@ -33,8 +30,6 @@ public class UserRole {
 	@JoinColumn(name = "user_id")
 	
 private UserEntity entity;
-//hi iam there creating relation between user and their role
-	
 	
 
 }

@@ -24,8 +24,6 @@ public class UserTranslator {
 	
 	public UserEntity toentity(UserRequest request) {
 		UserEntity user = mapper.convertValue(request, UserEntity.class);
-		
-		
 		return user;
 	}
 	

@@ -1,9 +1,5 @@
 package com.main.entity;
-
-
-
-
-
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -40,7 +36,7 @@ public class UserEntity {
 	@OneToMany(mappedBy = "entity",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	
 
-	private List<UserRole> roles;
+	private List<UserRole> roles = new ArrayList<UserRole>();
 
 
 }
